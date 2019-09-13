@@ -1,0 +1,4 @@
+#!/bin/sh
+APP=$(basename "${0}")
+BIN=/usr/bin/$APP
+GDK_SCALE=1 $BIN $*

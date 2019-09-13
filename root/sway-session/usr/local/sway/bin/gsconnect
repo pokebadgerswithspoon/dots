@@ -1,0 +1,2 @@
+#!/bin/sh
+gapplication action org.gnome.Shell.Extensions.GSConnect settings

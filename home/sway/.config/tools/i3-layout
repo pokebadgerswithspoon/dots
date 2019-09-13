@@ -1,0 +1,12 @@
+#!/bin/bash
+WHERE=~/.config/i3
+$WHERE/i3-subscribe window | grep window:focus | \
+while read -r line; do
+    id="$(xprop -root _NET_ACTIVE_WINDOW | awk '{print $5}')"
+    case "$(xprop -id "$id" WM_CLASS | cut -d\" -f4)" in
+        whatsdesk)    kb=ru ;;
+        Telegram)    kb=ru ;;
+        *)              kb=us ;;
+    esac
+    setxkbmap "$kb"
+done

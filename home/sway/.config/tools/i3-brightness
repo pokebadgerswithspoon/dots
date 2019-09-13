@@ -1,0 +1,38 @@
+#!/bin/sh
+
+xbacklight=xbacklight
+step=10
+expires=1500
+
+notify() {
+     section=brightness
+     action=section_$1
+     val=`$xbacklight -get`
+     notify-send -i $action -t $expires -h int:value:$val -h string:synchronous:$section "Brightness $val %"
+}
+
+inc() {
+     $xbacklight -inc $step
+     notify "inc"
+}
+dec() {
+     $xbacklight -dec $step
+     notify "dec"
+}
+usage() {
+    echo "Usage: $0 inc|dec|h
+Control brightness and related notifications."
+}
+
+case "$1" in
+    inc)
+        inc 
+        ;;
+    dec)
+        dec
+        ;;
+    h | *)
+        usage
+    ;;
+esac
+

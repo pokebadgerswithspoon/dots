@@ -1,0 +1,47 @@
+#!/bin/sh
+lock() {
+#    swaylock -e -c 000000 -i /usr/share/backgrounds/Capucijnengang_by_Artem_Kavalerov.blur.png 
+    f1=/tmp/scr-lock-$USER.png
+    f2=/tmp/scr-blur-$USER.png
+    grim -t png $f1
+    convert $f1 -resize 320x180 -blur 3x3 $f2
+    rm $f1
+    swaylock -e -c 000000 -i $f2
+}
+onlock () {
+   for file in ~/.config/onlock.d/*
+   do
+     echo $file
+     if [ -x "$file" ]
+     then
+       sh -c $file
+     fi
+   done
+}
+
+case "$1" in
+    lock)
+        lock && onlock
+        ;;
+    logout)
+        i3-msg exit
+        ;;
+    suspend)
+        lock && onlock && systemctl suspend
+        ;;
+    hibernate)
+        lock && onlock && systemctl hibernate
+        ;;
+    reboot)
+        systemctl reboot
+        ;;
+    shutdown)
+        systemctl poweroff
+        ;;
+    *)
+        echo "Usage: $0 {lock|logout|suspend|hibernate|reboot|shutdown}"
+        exit 2
+esac
+
+exit 0
+

@@ -1,0 +1,4 @@
+#!/bin/sh
+APP=$(basename "${0}")
+BIN=/usr/bin/$APP
+XCURSOR_SIZE=36 GDK_BACKEND=x11 GDK_SCALE=1 GDK_DPI_SCALE=1 $BIN $*

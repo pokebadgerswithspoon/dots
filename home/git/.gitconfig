@@ -1,0 +1,2 @@
+[core]
+	editor = gedit --class GitEdit --name=GitEdit -s

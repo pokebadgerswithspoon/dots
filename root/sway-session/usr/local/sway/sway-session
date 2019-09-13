@@ -1,0 +1,31 @@
+#!/bin/sh
+# Enable QT apps to have gtk theme  
+export QT_QPA_PLATFORMTHEME=qt5ct
+
+# Force wayland on qt apps
+export QT_QPA_PLATFORM=wayland
+#export QT_QPA_PLATFORMTHEME=qgnomeplatform
+QT_QPA_PLATFORMTHEME=qt5ct
+export QT_WAYLAND_FORCE_DPI=162
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+#export QT_STYLE_OVERRIDE=qt5ct-style
+
+# Enable qutebrowser to skip wayland check
+export QUTE_SKIP_WAYLAND_CHECK=1
+export XDG_CURRENT_DESKTOP=sway
+## does not seem to work
+#export MOZ_ENABLE_WAYLAND=1
+
+## If you give up and want scale for GDK apps
+#export GDK_BACKEND=x11 
+#export GDK_DPI_SCALE=0.515
+export XCURSOR_SIZE=36
+export SWAY_CURSOR_SIZE=26
+
+#export GDK_BACKEND=wayland
+export CLUTTER_BACKEND=wayland
+
+#export GDK_SCALE=2
+#export GDK_DPI_SCALE=0.515
+PATH=/usr/local/sway/bin:$PATH /usr/bin/sway

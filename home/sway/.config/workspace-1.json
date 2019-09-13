@@ -1,0 +1,57 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "normal",
+    "current_border_width": 5,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1760,
+       "width": 1595,
+       "x": 4,
+       "y": 39
+    },
+    "name": "SpellTheWord.js - l21 - Visual Studio Code",
+    "percent": 0.5,
+    "swallows": [
+       {
+       // "class": "^Code$",
+       // "instance": "^code$",
+       // "title": "^SpellTheWord\\.js\\ \\-\\ l21\\ \\-\\ Visual\\ Studio\\ Code$",
+       // "window_role": "^browser\\-window$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 5,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1706,
+               "width": 1590,
+               "x": 0,
+               "y": 0
+            },
+            "name": "i3: Layout saving in i3 - Mozilla Firefox",
+            "percent": 0.583333333333333,
+            "swallows": [
+               {
+               // "class": "^Firefox$",
+               // "instance": "^Navigator$",
+               // "title": "^i3\\:\\ Layout\\ saving\\ in\\ i3\\ \\-\\ Mozilla\\ Firefox$",
+               // "window_role": "^browser$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
