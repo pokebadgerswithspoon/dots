@@ -3256,16 +3256,16 @@ scale {
   scale marks {
     color: alpha(currentColor,0.4); }
     scale marks.top {
-      margin-bottom: 6;
+      margin-bottom: 10.2px;
       margin-top: -20.4px; }
     scale marks.bottom {
-      margin-top: 6;
+      margin-top: 10.2px;
       margin-bottom: -20.4px; }
     scale marks.top {
-      margin-right: 6;
+      margin-right: 10.2px;
       margin-left: -20.4px; }
     scale marks.bottom {
-      margin-left: 6;
+      margin-left: 10.2px;
       margin-right: -20.4px; }
   scale.fine-tune marks.top {
     margin-bottom: 10.2px;
