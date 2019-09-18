@@ -231,22 +231,9 @@ exec xrdb -merge ~/.config/sway/Xresources
 #include /etc/sway/config.d/*
 include ~/.config/sway/config.d/*
 
-# scale=1.7/2
-set $gdk_pref GDK_BACKEND=x11 GDK_SCALE=2 GDK_DPI_SCALE=0.85
-
-exec --no-startup-id $gdk_pref rescuetime
-exec --no-startup-id $gdk_pref /usr/bin/slack
-exec --no-startup-id gapplication launch org.gnome.Shell.Extensions.GSConnect
-exec --no-startup-id telegram-desktop
-exec --no-startup-id $gdk_pref /usr/bin/whatsapp-nativefier --tray
-exec --no-startup-id $gdk_pref /usr/bin/geary
-
 exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/sway/workspace-1.json'"
 exec --no-startup-id "i3-msg 'workspace 3; append_layout ~/.config/sway/workspace-3.json'"
 
-
-# Path to volume control, without trailing slash
-set $tools ~/.config/sway/tools
 
 #set $statuscmd waybar
 set $statussig SIGUSR1
