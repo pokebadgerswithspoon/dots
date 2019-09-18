@@ -159,4 +159,6 @@ webmTOmp4 () {
 mp4TOmp3 () {
       ffmpeg -i "$1" "$1".mp3
 }
+eval `ssh-agent -s` > /dev/null
+
 source /usr/share/nvm/init-nvm.sh
