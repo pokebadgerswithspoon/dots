@@ -1,2 +1,5 @@
 [core]
 	editor = gedit --class GitEdit --name=GitEdit -s
+[user]
+	email = lauri@icantfeelmylegs.com
+	name = Lauri

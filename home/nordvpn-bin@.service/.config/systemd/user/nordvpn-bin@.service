@@ -1,0 +1,11 @@
+[Unit]
+Description=Connect nordvpn with /usr/bin/nordvpn cli
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/nordvpn connect
+ExecStop=/usr/bin/nordvpn disconnect
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
