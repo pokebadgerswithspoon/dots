@@ -7,6 +7,28 @@ if [ $ACTION = "usage" ] ; then
   echo "  grimshot copy|save win|screen|area [FILE]"
   exit
 fi
+function notify() {
+  CMD="notify-send -t 3000 -a grimshot $*"
+  sh -c "$CMD"
+}
+
+function notifyOk() {
+  TITLE=${2:-"Screenshot"}
+  MESSAGE=${1:-"OK"}
+  notify "\"$TITLE\"" "\"$MESSAGE\""
+}
+function notifyError() {
+  TITLE=${2:-"Screenshot"}
+  MESSAGE=${1:-"Error taking screenshot with grim"}
+  notify -u critical "\"$TITLE\"" "\"$MESSAGE\""
+}
+
+function die() {
+  MSG=${1:-Bye}
+  echo "Dead: $MSG"
+  notify-send -u critical -a grimshot "Screenshot" "Dead: $MSG"
+  exit -1
+}
 
 if [ $SUBJECT = "area" ] ; then
   GEOM=$(slurp -d)
@@ -18,34 +40,28 @@ elif [ $SUBJECT = "win" ] ; then
   APP_ID=`swaymsg -t get_tree | jq -r '.. | (.nodes? // empty)[] | select(.focused) | .app_id'`
   WHAT="$APP_ID window"
 elif [ $SUBJECT = "screen" ] ; then
+  GEOM=""
   WHAT="Screen"
 else
   die "Unknown subject to take a screen shot from" $SUBJECT
 fi
 
 if [ $ACTION = "copy" ] ; then
-  TMP=${TMPDIR:-/tmp}/grim-$USER-data
-  TITLE="Screenshot"
-  MESSAGE="$WHAT copied to buffer"
-  grim $GEOM $TMP
-  xclip -selection clipboard -t image/png < $TMP
-  wl-copy --type image/png < $TMP
+  TMP=${TMPDIR:-/tmp}/grim-$USER-data.png
+  CMD="grim $GEOM $TMP"
+  sh -c "$CMD" || die "Unable to take screenshot"
+  wl-copy --type image/png < $TMP  || die
   rm $TMP
-  OK=true
+  notifyOk "$WHAT copied to buffer"
 else
-  TITLE="Screenshot of $SUBJECT"
-  MESSAGE=$(basename "$FILE")
   CMD="grim $GEOM \"$FILE\""
   sh -c "$CMD"
   if [ $? -eq 0 ]; then
-    OK=true
+    TITLE="Screenshot of $SUBJECT"
+    MESSAGE=$(basename "$FILE")
+    notifyOk "$MESSAGE" "$TITLE"
   else
-    OK=false
+    notifyError "Error taking screenshot with grim"
   fi
 fi
 
-if $OK ; then
-  notify-send -a grimshot "$TITLE" "$MESSAGE"
-else
-  notify-send -u critical -a grimshot "Screenshot" "Error taking screenshot with grim"
-fi
