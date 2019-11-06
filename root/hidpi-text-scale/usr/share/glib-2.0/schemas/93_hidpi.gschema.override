@@ -1,0 +1,6 @@
+# dont forget
+# /usr/share/glib-2.0/schemas/93_hidpi.gschema.override
+[org.gnome.desktop.interface]
+scaling-factor=2
+text-scaling-factor=0.87
+
