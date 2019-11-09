@@ -1,3 +1,3 @@
 #!/bin/sh
 xrdb /etc/Xresources
-export XCURSOR_SIZE=36
+export XCURSOR_SIZE=48

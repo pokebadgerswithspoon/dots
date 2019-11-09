@@ -131,9 +131,10 @@ if [ ! -w ${XDG_RUNTIME_DIR:="/run/user/$UID"} ]; then
 else
     export XDG_RUNTIME_DIR
 fi
-export RBENV_ROOT=$HOME/.local/rbenv
-PATH="$RBENV_ROOT/bin:$PATH"
-eval "$(rbenv init -)"
+
+#export RBENV_ROOT=$HOME/.local/rbenv
+#PATH="$RBENV_ROOT/bin:$PATH"
+#eval "$(rbenv init -)"
 
 #RVM_HOME=$HOME/.local/rvm
 #PATH=$RVM_HOME/bin:$PATH
