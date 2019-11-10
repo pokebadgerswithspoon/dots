@@ -24,7 +24,7 @@ case "$1" in
         lock && onlock
         ;;
     logout)
-        i3-msg exit
+        swaymsg exit
         ;;
     suspend)
         lock && onlock && systemctl suspend
