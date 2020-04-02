@@ -1,18 +1,11 @@
 #!/bin/sh
-# Enable QT apps to have gtk theme  
-export QT_QPA_PLATFORMTHEME=qt5ct
-
 # Force wayland on qt apps
-#export QT_QPA_PLATFORM=wayland
-#export QT_WAYLAND_FORCE_DPI=physical
-#export QT_QPA_PLATFORMTHEME=qgnomeplatform
-QT_QPA_PLATFORMTHEME=qt5ct
-export QT_WAYLAND_FORCE_DPI=162
-export QT_WAYLAND_FORCE_DPI=physical
-export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
-export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 #export QT_STYLE_OVERRIDE=qt5ct-style
+export QT_QPA_PLATFORM=wayland
+export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
+export QT_WAYLAND_FORCE_DPI=172
+export QT_QPA_PLATFORMTHEME=gtk3 
 
 # Enable qutebrowser to skip wayland check
 export QUTE_SKIP_WAYLAND_CHECK=1
