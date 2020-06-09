@@ -202,6 +202,7 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 bindsym --to-code $mod+o mode "$mode_system"
+#bindsym --to-code $mod+l exec --no-startup-id $tools/system-exit lock, mode "default"
 
 #
 # Status Bar:
@@ -209,18 +210,21 @@ bindsym --to-code $mod+o mode "$mode_system"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     position bottom
+   font pango:DejaVu Sans Mono, FontAwesome 18
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
 
     # status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
     swaybar_command waybar
+    #status_command i3status-rs
 
     colors {
         statusline #ffffff
         background #323232
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
+
 }
 
 

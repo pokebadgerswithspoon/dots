@@ -56,9 +56,14 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/' -e 's/^/ /'
+}
+
 if [ "$color_prompt" = yes ]; then
 #    PS1='${debian_chroot:+($debian_chroot)}\[\033[00;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-     PS1="\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\h:\[$(tput sgr0)\]\[\033[38;5;6m\][\w]:\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+#     PS1="\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\h:\[$(tput sgr0)\]\[\033[38;5;6m\][\w]:\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+     PS1="\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\h:\[$(tput sgr0)\]\[\033[38;5;6m\][\w]\[\e[32m\]\$(parse_git_branch)\[\e[00m\]\[$(tput sgr0)\]\[\033[38;5;15m\]\[$(tput sgr0)\] "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -156,10 +161,11 @@ source /etc/profile.d/vte.sh
 
 webmTOmp4 () {
       ffmpeg -i "$1" -qscale 0 "$1".mp4
+      rm $1
 }    
 mp4TOmp3 () {
       ffmpeg -i "$1" "$1".mp3
 }
 eval `ssh-agent -s` > /dev/null
 
-source /usr/share/nvm/init-nvm.sh
+#source /usr/share/nvm/init-nvm.sh
