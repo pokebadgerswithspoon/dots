@@ -3,7 +3,7 @@
 # This script keeps track of active keyboard layouts per window.
 #
 # This script requires i3ipc-python package (install it from a system package
-# manager or pip).
+# manager or pip). 
 
 import i3ipc
 
