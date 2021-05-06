@@ -1,6 +1,6 @@
 # VS code usage
 
-## settings.xml
+## settings.json
 
 ```
     "java.format.settings.profile": "Lauri's",
