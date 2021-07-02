@@ -1,3 +1,0 @@
-#!/bin/sh
-
-QT_SCALE_FACTOR=1 QT_QPA_PLATFORM=xcb QT_QPA_PLATFORMTHEME=gtk3 /usr/bin/zoom

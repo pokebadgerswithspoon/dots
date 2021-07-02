@@ -28,9 +28,7 @@ set $tools ~/.config/sway/tools
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output HDMI-A-1 scale 1
-exec gsettings set org.gnome.desktop.interface cursor-size 36
-exec export XCURSOR_SIZE=36
+output HDMI-A-1 scale 2
 #
 # Example configuration:
 #

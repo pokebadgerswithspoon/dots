@@ -1,6 +1,6 @@
 /*
  ********************************************
- *░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░*
+
  *░░█▀█░█░░░█░█░█▀▀░░░█░█░█░░░▀█▀░█▀▄░█▀█░░*
  *░░█▀▀░█░░░█░█░▀▀█░░░█░█░█░░░░█░░█▀▄░█▀█░░*
  *░░▀░░░▀▀▀░▀▀▀░▀▀▀░░░▀▀▀░▀▀▀░░▀░░▀░▀░▀░▀░░*
@@ -11,14 +11,13 @@
 * {
 	border: none;
 	border-radius: 0;
-        font-family: Hack Nerd Font;
-	font-size: 20px;
-	min-height: 2em;
+	font-family: Hack Nerd Font;
+	font-size: 12px;
+	min-height: 24px;
 }
 
 window#waybar {
 	background: transparent;
-        padding: 1px 0 1px 1px;
 }
 
 window#waybar.hidden {
@@ -26,47 +25,40 @@ window#waybar.hidden {
 }
 
 #window {
-    margin: 0px 16px 8px 8px;
+    margin-bottom: 4px;
+    margin-top: 0px;
     padding-left: 16px;
     padding-right: 16px;
-    border-radius: 1em;
-    transition: none;
+	border-radius: 26px;
+	transition: none;
+	/*
     color: #f8f8f2;
-    background: #282a36;
-/*
-    color: #4d4d4d;
-    background: #e6e6e6;
-*/
-}
-window#waybar.solo #window,
-window#waybar.empty #window {
+	background: #282a36;
+    */
     color: transparent;
-    background: transparent;
+	background: transparent;
 }
-/*
+
 window#waybar.termite #window,
-window#waybar.firefox #window,
 window#waybar.Firefox #window,
 window#waybar.Navigator #window,
 window#waybar.PCSX2 #window {
     color: #4d4d4d;
-    background: #e6e6e6;
+	background: #e6e6e6;
 }
-*/
 
 #workspaces {
-        margin: 0 0 8px 12px;
+    margin-top: 0px;
+    margin-bottom: 4px;
+ margin-left: 12px;
 	border-radius: 26px;
 	background: #282a36;
 	transition: none;
 }
-#tray {
-     margin: 0 6px 6px 0;
-}
 
 #workspaces button {
-margin: 0;
-padding: 0;
+    padding: 0;
+    margin: 0;
 	transition: none;
 	color: #f8f8f2;
 	background: transparent;
@@ -85,8 +77,9 @@ padding: 0;
 }
 
 #mpd {
-        margin: 0px 0 8px 8px;
-
+    margin-bottom: 4px;
+    margin-top: 0px;
+	margin-left: 8px;
 	padding-left: 16px;
 	padding-right: 16px;
 	border-radius: 26px;
@@ -103,8 +96,10 @@ padding: 0;
 }
 
 #network {
-        margin: 0px 0 8px 8px;
-        padding-left: 16px;
+    margin-bottom: 4px;
+    margin-top: 0px;
+	margin-left: 8px;
+	padding-left: 16px;
 	padding-right: 16px;
 	border-radius: 26px;
 	transition: none;
@@ -113,7 +108,9 @@ padding: 0;
 }
 
 #pulseaudio {
-        margin: 0px 0 8px 8px;
+    margin-top: 0px;
+    margin-bottom: 4px;
+	margin-left: 8px;
 	padding-left: 16px;
 	padding-right: 16px;
 	border-radius: 26px;
@@ -123,7 +120,10 @@ padding: 0;
 }
 
 #temperature {
-        margin: 0px 0 8px 8px;
+    margin-top: 0px;
+    margin-bottom: 4px;
+
+	margin-left: 8px;
 	padding-left: 16px;
 	padding-right: 16px;
 	border-radius: 26px;
@@ -133,7 +133,9 @@ padding: 0;
 }
 
 #cpu {
-        margin: 0px 0 8px 8px;
+    margin-top: 0px;
+    margin-bottom: 4px;
+	margin-left: 8px;
 	padding-left: 16px;
 	padding-right: 16px;
 	border-radius: 26px;
@@ -143,7 +145,9 @@ padding: 0;
 }
 
 #memory {
-        margin: 0px 0 8px 8px;
+    margin-top: 0px;
+    margin-bottom: 4px;
+	margin-left: 8px;
 	padding-left: 16px;
 	padding-right: 16px;
 	border-radius: 26px;
@@ -153,7 +157,9 @@ padding: 0;
 }
 
 #clock {
-        margin: 0px 0 8px 8px;
+    margin-top: 0px;
+    margin-bottom: 4px;
+	margin-left: 8px;
 	margin-right: 12px;
 	padding-left: 16px;
 	padding-right: 16px;
@@ -162,13 +168,5 @@ padding: 0;
 	color: #f8f8f2;
 	background: #282a36;
 }
-#mode {
-        margin: 0px 0 8px 8px;
-        margin-right: 12px;
-        padding-left: 16px;
-        padding-right: 16px;
-        border-radius: 26px;
-        transition: none;
-       color: #4d4d4d;
-        background: #ff6e67;
-}
+
+
