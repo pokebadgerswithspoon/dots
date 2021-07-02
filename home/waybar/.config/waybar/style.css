@@ -57,8 +57,7 @@ window#waybar.PCSX2 #window {
 }
 
 #workspaces button {
-    padding: 0;
-    margin: 0;
+	margin: 0;
 	transition: none;
 	color: #f8f8f2;
 	background: transparent;
