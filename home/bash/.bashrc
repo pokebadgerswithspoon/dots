@@ -151,6 +151,9 @@ PATH="$HOME/.local/bin:$PATH"
 export ANDROID_HOME=$HOME/.local/Android/Sdk
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export KUBECONFIG=~/.config/k3s-icantfeelmylegs.yaml
+#export KUBECONFIG=/home/lauri/.config/k3s-ocl.yaml
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 export PATH
 
@@ -166,6 +169,7 @@ webmTOmp4 () {
 mp4TOmp3 () {
       ffmpeg -i "$1" "$1".mp3
 }
-eval `ssh-agent -s` > /dev/null
+
+eval "$(starship init bash)"
 
 #source /usr/share/nvm/init-nvm.sh

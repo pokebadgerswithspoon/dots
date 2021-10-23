@@ -12,7 +12,7 @@
 	border: none;
 	border-radius: 0;
 	font-family: Hack Nerd Font;
-	font-size: 12px;
+	font-size: 11px;
 	min-height: 24px;
 }
 
@@ -25,18 +25,14 @@ window#waybar.hidden {
 }
 
 #window {
-    margin-bottom: 4px;
+    margin-bottom: 5px;
     margin-top: 0px;
     padding-left: 16px;
     padding-right: 16px;
-	border-radius: 26px;
-	transition: none;
-	/*
-    color: #f8f8f2;
-	background: #282a36;
-    */
+    border-radius: 26px;
+    transition: none;
     color: transparent;
-	background: transparent;
+    background: transparent;
 }
 
 window#waybar.termite #window,
@@ -44,12 +40,12 @@ window#waybar.Firefox #window,
 window#waybar.Navigator #window,
 window#waybar.PCSX2 #window {
     color: #4d4d4d;
-	background: #e6e6e6;
+    background: #e6e6e6;
 }
 
 #workspaces {
     margin-top: 0px;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
  margin-left: 12px;
 	border-radius: 26px;
 	background: #282a36;
@@ -76,7 +72,7 @@ window#waybar.PCSX2 #window {
 }
 
 #mpd {
-    margin-bottom: 4px;
+    margin-bottom: 5px;
     margin-top: 0px;
 	margin-left: 8px;
 	padding-left: 16px;
@@ -95,7 +91,7 @@ window#waybar.PCSX2 #window {
 }
 
 #network {
-    margin-bottom: 4px;
+    margin-bottom: 5px;
     margin-top: 0px;
 	margin-left: 8px;
 	padding-left: 16px;
@@ -108,7 +104,7 @@ window#waybar.PCSX2 #window {
 
 #pulseaudio {
     margin-top: 0px;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 	margin-left: 8px;
 	padding-left: 16px;
 	padding-right: 16px;
@@ -120,7 +116,7 @@ window#waybar.PCSX2 #window {
 
 #temperature {
     margin-top: 0px;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 
 	margin-left: 8px;
 	padding-left: 16px;
@@ -133,7 +129,7 @@ window#waybar.PCSX2 #window {
 
 #cpu {
     margin-top: 0px;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 	margin-left: 8px;
 	padding-left: 16px;
 	padding-right: 16px;
@@ -145,7 +141,7 @@ window#waybar.PCSX2 #window {
 
 #memory {
     margin-top: 0px;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 	margin-left: 8px;
 	padding-left: 16px;
 	padding-right: 16px;
@@ -157,7 +153,7 @@ window#waybar.PCSX2 #window {
 
 #clock {
     margin-top: 0px;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 	margin-left: 8px;
 	margin-right: 12px;
 	padding-left: 16px;
