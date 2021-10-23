@@ -1,12 +1,13 @@
 #!/bin/sh
 lock() {
 #    swaylock -e -c 000000 -i /usr/share/backgrounds/Capucijnengang_by_Artem_Kavalerov.blur.png 
-    f1=/tmp/scr-lock-$USER.png
-    f2=/tmp/scr-blur-$USER.png
-    grim -t png $f1
-    convert $f1 -resize 320x180 -blur 3x3 $f2
-    rm $f1
-    swaylock -e -c 000000 -i $f2
+#    f1=/tmp/scr-lock-$USER.png
+#    f2=/tmp/scr-blur-$USER.png
+#    grim -t png $f1
+#    convert $f1 -resize 320x180 -blur 3x3 $f2
+#    rm $f1
+#    swaylock -e -c 000000 -i $f2
+     swaylock -e --effect-pixelate 10 --clock  --screenshots
 }
 onlock () {
    for file in ~/.config/onlock.d/*
