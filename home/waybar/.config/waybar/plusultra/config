@@ -1,0 +1,48 @@
+{
+	"layer": "bottom",
+        "position": "bottom",
+	"modules-left": ["sway/workspaces", "mpd", "sway/mode","sway/window"],
+	"modules-center": [],
+	"modules-right": ["tray", "network", "pulseaudio", "temperature", "cpu", "memory", "clock"],
+"tray": {
+    "icon-size": 20,
+    "spacing": 10
+},
+	"mpd": {
+		"tooltip": false,
+		"format": "{stateIcon} {artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
+		"format-disconnected": "ﳌ",
+		"format-stopped": "",
+        "state-icons": {
+            "playing": "",
+            "paused": ""
+        }
+	},
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 5,
+		"format": "{icon} {volume}%",
+		"format-icons": {
+			"default": ["奄", "奔", "墳"]
+		},
+                "on-click": "swaymsg exec ~/.config/sway/tools/pavucontrol-toggle"
+	},
+	"network": {
+		"tooltip": false,
+		"format-wifi": " {essid} {ipaddr}",
+		"format-ethernet": " {ipaddr}"
+	},
+	"cpu": {
+		"tooltip": false,
+		"format": " {}%"
+	},
+	"memory": {
+		"tooltip": false,
+		"format": " {}%"
+	},
+"clock": {
+    "interval": 60,
+    "format": "{:%d %b, %H:%M}",
+    "max-length": 25
+}
+}
