@@ -148,14 +148,17 @@ fi
 PATH="./node_modules/.bin/:./bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 
-export ANDROID_HOME=$HOME/.local/Android/Sdk
-export ANDROID_SDK_ROOT=$ANDROID_HOME
+#export ANDROID_HOME=$HOME/.local/Android/Sdk
+#export ANDROID_SDK_ROOT=$ANDROID_HOME
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export KUBECONFIG=~/.config/k3s-icantfeelmylegs.yaml
 #export KUBECONFIG=/home/lauri/.config/k3s-ocl.yaml
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 export PATH
+
+# As flutter doctor says
+export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 
 NODE_HOME=/opt/node-v12.6.0-linux-x64
 export PATH=$PATH:$NODE_HOME/bin
@@ -171,5 +174,6 @@ mp4TOmp3 () {
 }
 
 eval "$(starship init bash)"
-
+export 	EDITOR=vim
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 #source /usr/share/nvm/init-nvm.sh

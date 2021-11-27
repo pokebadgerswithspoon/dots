@@ -1,0 +1,16 @@
+#!/bin/sh
+
+case $1 in
+	en)
+		TO=0
+		;;
+        ru)     TO=1
+		;;
+	*)      TO=0
+esac
+
+
+inputId=$(swaymsg -t get_inputs | jq '.[] | select(.name=="USB Keyboard") | .identifier')
+#swaymsg -t get_inputs | jq '.[] | select(.identifier=="1241:361:USB_Keyboard") | .xkb_layout_names'
+
+swaymsg input $inputId xkb_switch_layout $TO
