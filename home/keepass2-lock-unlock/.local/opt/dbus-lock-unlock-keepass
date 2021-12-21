@@ -1,0 +1,24 @@
+#!/bin/bash
+
+screen_locked_debounced () {
+    if [[ $firstrun == '' ]] || [[ $(expr $(date +%s) - $firstrun) -ge 5 ]]
+    then
+        screen_locked;
+        firstrun=$(date +%s);
+    fi
+}
+
+screen_locked () {
+   keepass2 --lock-all
+}
+screen_unlocked () {
+   keepass --unlock-all
+}
+
+dbus-monitor --session "type='signal',interface='org.freedesktop.ScreenSaver'" |
+while read x; do
+    case "$x" in 
+       *"boolean true"*) screen_locked_debounced;;
+       *"boolean false"*) screen_unlocked;;  
+    esac
+done
